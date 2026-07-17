@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vasanthi S — Python & AI Engineer</title>
+<style>
+:root{--bg:#0a0e1a;--surface:#111827;--card:#1a2035;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--accent2:#a78bfa;--border:rgba(56,189,248,.12);--glow:rgba(56,189,248,.15);--radius:14px}
+[data-theme="light"]{--bg:#f0f4f8;--surface:#fff;--card:#fff;--text:#1e293b;--muted:#475569;--accent:#0284c7;--accent2:#7c3aed;--border:rgba(2,132,199,.15);--glow:rgba(2,132,199,.08)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;height:100vh;overflow:hidden;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none;cursor:pointer}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(10,14,26,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+[data-theme="light"] .nav{background:rgba(240,244,248,.92)}
+.nav .logo{font-weight:900;font-size:1.3rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;cursor:pointer}
+.nav-items{display:flex;gap:6px;align-items:center}
+.nav-items .nav-link{padding:7px 16px;border-radius:8px;font-size:.82rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s;border:none;background:none}
+.nav-items .nav-link:hover,.nav-items .nav-link.active{color:var(--accent);background:var(--glow)}
+.nav-items .theme-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all .3s;margin-left:8px}
+.nav-items .theme-btn:hover{border-color:var(--accent);box-shadow:0 0 14px var(--glow)}
+.menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* PAGES */
+.page-container{margin-top:58px;height:calc(100vh - 58px);overflow-y:auto;scroll-behavior:smooth}
+.page{display:none;padding:50px 5%;max-width:1000px;margin:0 auto;animation:fadeIn .4s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO */
+.hero{align-items:center;min-height:calc(100vh - 58px);position:relative}
+.hero.active{display:flex}
+.hero-glow{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 25% 40%,rgba(56,189,248,.1),transparent 55%),radial-gradient(ellipse at 75% 75%,rgba(167,139,250,.08),transparent 55%)}
+.hero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);font-weight:900;margin-bottom:.3rem;letter-spacing:-.02em}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .role{font-size:1rem;color:var(--accent2);font-weight:600;margin-bottom:1.2rem}
+.hero .desc{color:var(--muted);max-width:500px;margin-bottom:2rem;font-size:.92rem}
+.stats{display:flex;gap:30px;margin-bottom:2rem}
+.stat-box span{display:block;font-size:2rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-box small{color:var(--muted);font-size:.75rem}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:11px 24px;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .25s;border:none;display:inline-block}
+.btn-grad{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 20px var(--glow)}
+.btn-grad:hover{transform:translateY(-3px);box-shadow:0 8px 30px var(--glow)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.05)}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;margin-bottom:14px;transition:all .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 40px rgba(0,0,0,.15),0 0 20px var(--glow)}
+.card h3{font-size:1.05rem;margin-bottom:6px}
+.card .meta{font-size:.82rem;color:var(--accent);margin-bottom:10px;font-weight:500}
+.card ul{padding-left:16px}
+.card li{color:var(--muted);font-size:.85rem;margin-bottom:5px}
+.section-tag{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.section-tag::before{content:"— "}
+h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;margin-bottom:2rem}
+h2 em{font-style:italic;color:var(--accent)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.skill-group h4{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.5rem}
+.tag{padding:6px 14px;border:1px solid var(--border);border-radius:20px;font-size:.78rem;color:var(--muted);transition:all .25s;cursor:default}
+.tag:hover{border-color:var(--accent);color:var(--accent);background:var(--glow);transform:translateY(-2px);box-shadow:0 4px 12px var(--glow)}
+
+/* TIMELINE */
+.timeline{padding-left:28px;position:relative}
+.timeline::before{content:'';position:absolute;left:6px;top:10px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent)}
+.tl-item{position:relative;margin-bottom:1.5rem}
+.tl-item::before{content:'';position:absolute;left:-24px;top:10px;width:12px;height:12px;border-radius:50%;border:2.5px solid var(--accent);background:var(--bg);transition:background .3s}
+.tl-item.now::before{background:var(--accent);box-shadow:0 0 10px var(--accent)}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.proj-card{position:relative;overflow:hidden}
+.proj-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.proj-card:hover::after{transform:scaleX(1)}
+.proj-tech{font-size:.73rem;color:var(--accent);margin-top:10px;font-family:'Courier New',monospace}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contact-info p{color:var(--muted);margin-bottom:12px;font-size:.9rem}
+form{display:flex;flex-direction:column;gap:12px}
+input,select,textarea{font-family:inherit;font-size:.88rem;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);transition:all .3s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+textarea{min-height:100px;resize:vertical}
+.submit-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:13px;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .25s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--glow)}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);color:var(--muted);font-size:.78rem;margin-top:3rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-items{position:fixed;top:54px;left:0;right:0;background:var(--surface);flex-direction:column;padding:20px;gap:8px;border-bottom:1px solid var(--border);transform:translateY(-150%);transition:transform .3s;z-index:99}
+  .nav-items.open{transform:translateY(0)}
+  .menu-toggle{display:block}
+  .hero h1{font-size:2rem}
+  .stats{flex-wrap:wrap;gap:16px}
+  .skills-grid,.proj-grid,.contact-wrap{grid-template-columns:1fr}
+  .page{padding:30px 5%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <span class="logo" id="logo">VS</span>
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  <div class="nav-items" id="navItems">
+    <button class="nav-link active" data-page="hero">Home</button>
+    <button class="nav-link" data-page="about">About</button>
+    <button class="nav-link" data-page="skills">Skills</button>
+    <button class="nav-link" data-page="experience">Experience</button>
+    <button class="nav-link" data-page="projects">Projects</button>
+    <button class="nav-link" data-page="contact">Contact</button>
+    <button class="theme-btn" id="themeBtn">☀️</button>
+  </div>
+</div>
+
+<!-- PAGE CONTAINER -->
+<div class="page-container" id="pageContainer">
+
+  <!-- HERO -->
+  <div class="page hero active" id="page-hero">
+    <div class="hero-glow"></div>
+    <div>
+      <h1>Vasanthi <span>S.</span></h1>
+      <p class="role">Generative AI Engineer | LLM & Agentic AI Specialist</p>
+      <p class="desc">Building intelligent systems using LLMs, RAG pipelines, and multi-cloud platforms. Hands-on expertise in AI-powered chatbots, dynamic workflow automation with MCP tools, and agentic AI solutions.</p>
+      <div class="stats">
+        <div class="stat-box"><span>3+</span><small>Years Exp</small></div>
+        <div class="stat-box"><span>5+</span><small>AI Projects</small></div>
+        <div class="stat-box"><span>3</span><small>Cloud Platforms</small></div>
+      </div>
+      <div class="btns">
+        <button class="btn btn-grad" data-page="projects">View Projects</button>
+        <button class="btn btn-outline" data-page="contact">Hire Me</button>
+        <a href="https://www.linkedin.com/in/vasanthi-s-74914124b" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="page" id="page-about">
+    <p class="section-tag">About me</p>
+    <h2>Engineered for <em>impact.</em></h2>
+    <div class="card">
+      <p style="color:var(--muted);margin-bottom:1rem">Generative AI Engineer with 3 years of experience building intelligent systems using LLMs, RAG pipelines, and multi-cloud platforms (Azure, AWS, GCP). Hands-on expertise in developing AI-powered chatbots, dynamic workflow automation using MCP tools, and integrating third-party services via Google ADK. Passionate about building scalable, production-ready AI systems that solve real business problems.</p>
+      <p style="margin-bottom:.5rem"><strong>Education:</strong></p>
+      <ul style="padding-left:18px;color:var(--muted);margin-bottom:1rem">
+        <li>M.Sc Computer Science — Bharathidasan University, Trichy (2022 · 85.58%)</li>
+        <li>B.Sc Computer Science — Shrimathi Indira Gandhi College, Trichy (2020 · 85.77%)</li>
+      </ul>
+      <p style="color:var(--muted)"><strong>Languages:</strong> English · Tamil &nbsp;&nbsp; <strong>Location:</strong> Chennai, India</p>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="page" id="page-skills">
+    <p class="section-tag">Tech stack</p>
+    <h2>Skills & <em>tools.</em></h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>AI / LLM</h4>
+        <div class="tags"><span class="tag">Gemini Models</span><span class="tag">LLMs</span><span class="tag">RAG Pipeline</span><span class="tag">Prompt Engineering</span><span class="tag">Agentic AI</span><span class="tag">AI Agents</span></div>
+        <h4>Frameworks</h4>
+        <div class="tags"><span class="tag">LangChain</span><span class="tag">LlamaIndex</span><span class="tag">MCP</span><span class="tag">Google ADK</span></div>
+        <h4>Languages</h4>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Java</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Cloud & DevOps</h4>
+        <div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Linux</span></div>
+        <h4>Databases</h4>
+        <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQL</span><span class="tag">PgVector</span></div>
+        <h4>Tools & IDE</h4>
+        <div class="tags"><span class="tag">VS Code</span><span class="tag">Kiro IDE</span><span class="tag">KQL</span><span class="tag">Git</span></div>
+      </div>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="page" id="page-experience">
+    <p class="section-tag">Work history</p>
+    <h2>Where I've <em>built.</em></h2>
+    <div class="timeline">
+      <div class="tl-item now">
+        <div class="card">
+          <h3>Generative AI Engineer</h3>
+          <p class="meta">Corent Technology · June 2023 – Present · 3 Years</p>
+          <ul>
+            <li><strong>NL-to-SQL Engine:</strong> AI-Driven SQL Generation using Gemini models to convert natural language to PostgreSQL queries with Cosine Similarity retrieval</li>
+            <li><strong>Multi-Cloud AI Chatbot:</strong> Built a chatbot leveraging AI/ML for real-time cloud details across Azure, AWS, and GCP</li>
+            <li><strong>Dynamic AI Workflow (MCP):</strong> Designed intelligent orchestration of complex multi-step tasks using MCP tools</li>
+            <li><strong>Google ADK Integration:</strong> Client-server architecture for seamless external API connectivity within AI pipelines</li>
+            <li><strong>Cloud Observability:</strong> Automated live cloud account detail retrieval using KQL queries</li>
+            <li><strong>Cloud Knowledge Base:</strong> Streamlined metadata ingestion from AWS, Azure, and GCP APIs for resource costing</li>
+            <li><strong>Web Scraping & Chatbot:</strong> Built pipeline to scrape web content and provide accurate AI-generated answers</li>
+            <li><strong>DevOps & Automation:</strong> Linux service creation, containerization with Docker and Kubernetes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="card">
+          <h3>Software Development Intern</h3>
+          <p class="meta">Integrass · Trichy · June 2022 – September 2022</p>
+          <ul>
+            <li>Hands-on understanding of SDLC and Agile development methodologies</li>
+            <li>Functional Testing, Integration Testing, System Testing</li>
+            <li>Test Plans, Test Cases, and Test Scenarios</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="page" id="page-projects">
+    <p class="section-tag">Selected work</p>
+    <h2>Projects that <em>matter.</em></h2>
+    <div class="proj-grid">
+      <div class="card proj-card">
+        <h3>AI-Powered Web Intelligence & RAG System</h3>
+        <p style="color:var(--muted);font-size:.85rem">Expanded a RAG system using Python and PgVector embedding database to enable semantic search and accurate AI-generated answers from large document sets.</p>
+        <p class="proj-tech">Python · RAG · PgVector · Embeddings · LLM</p>
+      </div>
+      <div class="card proj-card">
+        <h3>Dynamic Workflow Automation with MCP</h3>
+        <p style="color:var(--muted);font-size:.85rem">Built dynamic workflow automation using AI models and MCP (Model Context Protocol) to orchestrate multi-step intelligent processes with real-time tool use.</p>
+        <p class="proj-tech">Python · MCP · Agentic AI · Gemini</p>
+      </div>
+      <div class="card proj-card">
+        <h3>Third-Party MCP Integration via Google ADK</h3>
+        <p style="color:var(--muted);font-size:.85rem">Client-server architecture using Google ADK to connect and integrate third-party MCP tools, enabling AI agents to interact with external services seamlessly.</p>
+        <p class="proj-tech">Google ADK · MCP · AI Agents · Python</p>
+      </div>
+      <div class="card proj-card">
+        <h3>NL-to-SQL Engine (Intent Classification)</h3>
+        <p style="color:var(--muted);font-size:.85rem">PostgreSQL Query Generator using Gemini models with Intent Classification for accurate natural language to SQL conversion.</p>
+        <p class="proj-tech">Python · Gemini · PostgreSQL · Cosine Similarity</p>
+      </div>
+      <div class="card proj-card">
+        <h3>Multi-Cloud Resource Intelligence Chatbot</h3>
+        <p style="color:var(--muted);font-size:.85rem">Multi-cloud chatbot leveraging AI and ML to provide cloud resource details across Azure, AWS, and GCP based on user queries.</p>
+        <p class="proj-tech">Python · Gemini · Azure · AWS · GCP</p>
+      </div>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page" id="page-contact">
+    <p class="section-tag">Get in touch</p>
+    <h2>Hire <em>me.</em></h2>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p>Open to full-time roles, contracts, and remote opportunities in Generative AI, LLM, and Agentic AI engineering.</p>
+        <br>
+        <p>📧 <a href="mailto:vasanthimsc22@gmail.com">vasanthimsc22@gmail.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/vasanthi-s-74914124b" target="_blank">LinkedIn Profile</a></p>
+        <p>📍 Chennai, India</p>
+      </div>
+      <form action="https://formspree.io/f/xrenpqpw" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <select name="subject" required>
+          <option value="" disabled selected>Select Subject</option>
+          <option>Full-time Job Opportunity</option>
+          <option>Contract / Remote Role</option>
+          <option>Interview Invitation</option>
+          <option>General Enquiry</option>
+        </select>
+        <textarea name="message" placeholder="Tell me about the role..." required></textarea>
+        <button type="submit" class="submit-btn">Send Message →</button>
+      </form>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+</div><!-- end page-container -->
+
+<script>
+// ========== PAGE NAVIGATION ==========
+document.addEventListener('DOMContentLoaded', function() {
+  var navLinks = document.querySelectorAll('[data-page]');
+  var pages = document.querySelectorAll('.page');
+
+  function goToPage(pageId) {
+    for (var i = 0; i < pages.length; i++) { pages[i].classList.remove('active'); }
+    var target = document.getElementById('page-' + pageId);
+    if (target) { target.classList.add('active'); }
+    var links = document.querySelectorAll('.nav-link');
+    for (var j = 0; j < links.length; j++) {
+      links[j].classList.remove('active');
+      if (links[j].getAttribute('data-page') === pageId) { links[j].classList.add('active'); }
+    }
+    document.getElementById('navItems').classList.remove('open');
+    document.getElementById('pageContainer').scrollTop = 0;
+  }
+
+  // Make goToPage global so it works everywhere
+  window.goToPage = goToPage;
+
+  for (var i = 0; i < navLinks.length; i++) {
+    (function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        goToPage(el.getAttribute('data-page'));
+      });
+    })(navLinks[i]);
+  }
+
+  document.getElementById('logo').addEventListener('click', function() { goToPage('hero'); });
+  document.getElementById('menuToggle').addEventListener('click', function() { document.getElementById('navItems').classList.toggle('open'); });
+  document.getElementById('themeBtn').addEventListener('click', function() {
+    var html = document.documentElement;
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('themeBtn').textContent = isDark ? '🌙' : '☀️';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  });
+
+  var saved = localStorage.getItem('theme');
+  if (saved) { document.documentElement.setAttribute('data-theme', saved); document.getElementById('themeBtn').textContent = saved === 'dark' ? '☀️' : '🌙'; }
+
+  // ========== PATTASU EFFECT ==========
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  window.addEventListener('resize', function() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+  var sparks = [];
+  var sparkColors = ['#38bdf8','#a78bfa','#34d399','#fbbf24','#fb7185','#f472b6','#60a5fa'];
+  document.addEventListener('mousemove', function(e) {
+    for (var j = 0; j < 3; j++) {
+      sparks.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*5,vy:(Math.random()-.5)*5,life:1,color:sparkColors[Math.floor(Math.random()*sparkColors.length)],size:Math.random()*3.5+1.5});
+    }
+  });
+  function renderSparks() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for (var i=sparks.length-1;i>=0;i--) {
+      var s=sparks[i]; s.x+=s.vx; s.y+=s.vy; s.vy+=0.1; s.life-=0.025;
+      if(s.life<=0){sparks.splice(i,1);continue;}
+      ctx.globalAlpha=s.life; ctx.fillStyle=s.color;
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.size*s.life,0,Math.PI*2); ctx.fill();
+    }
+    ctx.globalAlpha=1; requestAnimationFrame(renderSparks);
+  }
+  renderSparks();
+});
+</script>
+
+</body>
+</html>
