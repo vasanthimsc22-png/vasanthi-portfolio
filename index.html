@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO Meta Tags ===== -->
+<title>Vasanthi S — Generative AI Engineer | LLM & Agentic AI Specialist</title>
+<meta name="description" content="Vasanthi S — Generative AI Engineer with 3 years of experience in LLMs, RAG pipelines, MCP tools, and multi-cloud platforms (Azure, AWS, GCP). Open to opportunities.">
+<meta name="keywords" content="Vasanthi S, Generative AI Engineer, LLM, RAG, Agentic AI, MCP, Google ADK, Gemini, Python, Machine Learning, Chennai">
+<meta name="author" content="Vasanthi S">
+
+<!-- ===== Open Graph (LinkedIn, Facebook, WhatsApp preview) ===== -->
+<meta property="og:title" content="Vasanthi S — Generative AI Engineer">
+<meta property="og:description" content="Generative AI Engineer specializing in LLMs, RAG pipelines, and Agentic AI. 3 years of experience building production-ready AI systems.">
+<meta property="og:type" content="website">
+
+<!-- ===== Favicon (VS logo as SVG) ===== -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' fill='%2338bdf8'>V</text></svg>">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="chatbot.css">
+<script src="portfolio.js" defer></script>
+<script src="chatbot.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <span class="logo" id="logo">VS</span>
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  <div class="nav-items" id="navItems">
+    <button class="nav-link active" data-page="hero">Home</button>
+    <button class="nav-link" data-page="about">About</button>
+    <button class="nav-link" data-page="skills">Skills</button>
+    <button class="nav-link" data-page="experience">Experience</button>
+    <button class="nav-link" data-page="projects">Projects</button>
+    <button class="nav-link" data-page="contact">Contact</button>
+    <button class="theme-btn" id="themeBtn">☀️</button>
+  </div>
+</div>
+
+<!-- PAGE CONTAINER -->
+<div class="page-container" id="pageContainer">
+
+  <!-- HERO -->
+  <div class="page hero active" id="page-hero">
+    <div class="hero-glow"></div>
+    <div>
+      <h1>Vasanthi <span>S.</span></h1>
+      <p class="role">Generative AI Engineer | LLM & Agentic AI Specialist</p>
+      <p class="desc">Building intelligent systems using LLMs, RAG pipelines, and multi-cloud platforms. Hands-on expertise in AI-powered chatbots, dynamic workflow automation with MCP tools, and agentic AI solutions.</p>
+      <div class="stats">
+        <div class="stat-box"><span>3+</span><small>Years Exp</small></div>
+        <div class="stat-box"><span>5+</span><small>AI Projects</small></div>
+        <div class="stat-box"><span>3</span><small>Cloud Platforms</small></div>
+      </div>
+      <div class="btns">
+        <button class="btn btn-grad" data-page="projects">View Projects</button>
+        <button class="btn btn-outline" onclick="downloadCV()">Download CV ↓</button>
+        <button class="btn btn-outline" data-page="contact">Hire Me</button>
+        <a href="https://www.linkedin.com/in/vasanthi-s-74914124b" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="page" id="page-about">
+    <p class="section-tag">About me</p>
+    <h2>Engineered for <em>impact.</em></h2>
+    <div class="card">
+      <p style="color:var(--muted);margin-bottom:1rem">Generative AI Engineer with 3 years of experience building intelligent systems using LLMs, RAG pipelines, and multi-cloud platforms (Azure, AWS, GCP). Hands-on expertise in developing AI-powered chatbots, dynamic workflow automation using MCP tools, and integrating third-party services via Google ADK. Passionate about building scalable, production-ready AI systems that solve real business problems.</p>
+      <p style="margin-bottom:.5rem"><strong>Education:</strong></p>
+      <ul style="padding-left:18px;color:var(--muted);margin-bottom:1rem">
+        <li>M.Sc Computer Science — Bharathidasan University, Trichy (2022 · 85.58%)</li>
+        <li>B.Sc Computer Science — Shrimathi Indira Gandhi College, Trichy (2020 · 85.77%)</li>
+      </ul>
+      <p style="color:var(--muted)"><strong>Languages:</strong> English · Tamil &nbsp;&nbsp; <strong>Location:</strong> Chennai, India</p>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="page" id="page-skills">
+    <p class="section-tag">Tech stack</p>
+    <h2>Skills & <em>tools.</em></h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>AI / LLM</h4>
+        <div class="tags"><span class="tag">Gemini Models</span><span class="tag">LLMs</span><span class="tag">RAG Pipeline</span><span class="tag">Prompt Engineering</span><span class="tag">Agentic AI</span><span class="tag">AI Agents</span></div>
+        <h4>Frameworks</h4>
+        <div class="tags"><span class="tag">LangChain</span><span class="tag">LlamaIndex</span><span class="tag">MCP</span><span class="tag">Google ADK</span></div>
+        <h4>Languages</h4>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Java</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Cloud & DevOps</h4>
+        <div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Linux</span></div>
+        <h4>Databases</h4>
+        <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQL</span><span class="tag">PgVector</span></div>
+        <h4>Tools & IDE</h4>
+        <div class="tags"><span class="tag">VS Code</span><span class="tag">Kiro IDE</span><span class="tag">KQL</span><span class="tag">Git</span></div>
+      </div>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="page" id="page-experience">
+    <p class="section-tag">Work history</p>
+    <h2>Where I've <em>built.</em></h2>
+    <div class="timeline">
+      <div class="tl-item now">
+        <div class="card">
+          <h3>Generative AI Engineer</h3>
+          <p class="meta">Corent Technology · June 2023 – Present · 3 Years</p>
+          <ul>
+            <li><strong>NL-to-SQL Engine:</strong> AI-Driven SQL Generation using Gemini models to convert natural language to PostgreSQL queries with Cosine Similarity retrieval</li>
+            <li><strong>Multi-Cloud AI Chatbot:</strong> Built a chatbot leveraging AI/ML for real-time cloud details across Azure, AWS, and GCP</li>
+            <li><strong>Dynamic AI Workflow (MCP):</strong> Designed intelligent orchestration of complex multi-step tasks using MCP tools</li>
+            <li><strong>Google ADK Integration:</strong> Client-server architecture for seamless external API connectivity within AI pipelines</li>
+            <li><strong>Cloud Observability:</strong> Automated live cloud account detail retrieval using KQL queries</li>
+            <li><strong>Cloud Knowledge Base:</strong> Streamlined metadata ingestion from AWS, Azure, and GCP APIs for resource costing</li>
+            <li><strong>Web Scraping & Chatbot:</strong> Built pipeline to scrape web content and provide accurate AI-generated answers</li>
+            <li><strong>DevOps & Automation:</strong> Linux service creation, containerization with Docker and Kubernetes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="card">
+          <h3>Software Development Intern</h3>
+          <p class="meta">Integrass · Trichy · June 2022 – September 2022</p>
+          <ul>
+            <li>Hands-on understanding of SDLC and Agile development methodologies</li>
+            <li>Functional Testing, Integration Testing, System Testing</li>
+            <li>Test Plans, Test Cases, and Test Scenarios</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="page" id="page-projects">
+    <p class="section-tag">Selected work</p>
+    <h2>Projects that <em>matter.</em></h2>
+    <div class="proj-grid">
+      <div class="card proj-card">
+        <h3>AI-Powered Web Intelligence & RAG System</h3>
+        <p style="color:var(--muted);font-size:.85rem">Expanded a RAG system using Python and PgVector embedding database to enable semantic search and accurate AI-generated answers from large document sets.</p>
+        <p class="proj-tech">Python · RAG · PgVector · Embeddings · LLM</p>
+      </div>
+      <div class="card proj-card">
+        <h3>Dynamic Workflow Automation with MCP</h3>
+        <p style="color:var(--muted);font-size:.85rem">Built dynamic workflow automation using AI models and MCP (Model Context Protocol) to orchestrate multi-step intelligent processes with real-time tool use.</p>
+        <p class="proj-tech">Python · MCP · Agentic AI · Gemini</p>
+      </div>
+      <div class="card proj-card">
+        <h3>Third-Party MCP Integration via Google ADK</h3>
+        <p style="color:var(--muted);font-size:.85rem">Client-server architecture using Google ADK to connect and integrate third-party MCP tools, enabling AI agents to interact with external services seamlessly.</p>
+        <p class="proj-tech">Google ADK · MCP · AI Agents · Python</p>
+      </div>
+      <div class="card proj-card">
+        <h3>NL-to-SQL Engine (Intent Classification)</h3>
+        <p style="color:var(--muted);font-size:.85rem">PostgreSQL Query Generator using Gemini models with Intent Classification for accurate natural language to SQL conversion.</p>
+        <p class="proj-tech">Python · Gemini · PostgreSQL · Cosine Similarity</p>
+      </div>
+      <div class="card proj-card">
+        <h3>Multi-Cloud Resource Intelligence Chatbot</h3>
+        <p style="color:var(--muted);font-size:.85rem">Multi-cloud chatbot leveraging AI and ML to provide cloud resource details across Azure, AWS, and GCP based on user queries.</p>
+        <p class="proj-tech">Python · Gemini · Azure · AWS · GCP</p>
+      </div>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page" id="page-contact">
+    <p class="section-tag">Get in touch</p>
+    <h2>Hire <em>me.</em></h2>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p>Open to full-time roles, contracts, and remote opportunities in Generative AI, LLM, and Agentic AI engineering.</p>
+        <br>
+        <p>📧 <a href="mailto:vasanthimsc22@gmail.com">vasanthimsc22@gmail.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/vasanthi-s-74914124b" target="_blank">LinkedIn Profile</a></p>
+        <p>📍 Chennai, India</p>
+      </div>
+      <form action="https://formspree.io/f/xrenpqpw" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <select name="subject" required>
+          <option value="" disabled selected>Select Subject</option>
+          <option>Full-time Job Opportunity</option>
+          <option>Contract / Remote Role</option>
+          <option>Interview Invitation</option>
+          <option>General Enquiry</option>
+        </select>
+        <textarea name="message" placeholder="Tell me about the role..." required></textarea>
+        <button type="submit" class="submit-btn">Send Message →</button>
+      </form>
+    </div>
+    <div class="footer">© 2026 Vasanthi S</div>
+  </div>
+
+</div><!-- end page-container -->
+
+<!-- ===== PRINT-ONLY RESUME (auto-generated from portfolio content) ===== -->
+<div id="resume">
+  <h1>VASANTHI S</h1>
+  <div class="r-title">Generative AI Engineer | LLM & Agentic AI Specialist</div>
+  <div class="r-contact">vasanthimsc22@gmail.com &nbsp;|&nbsp; Chennai, India &nbsp;|&nbsp; linkedin.com/in/vasanthi-s-74914124b</div>
+
+  <h2>PROFESSIONAL SUMMARY</h2>
+  <p>Generative AI Engineer with 3 years of experience building intelligent systems using LLMs, RAG pipelines, and multi-cloud platforms (Azure, AWS, GCP). Hands-on expertise in developing AI-powered chatbots, dynamic workflow automation using MCP (Model Context Protocol) tools, and integrating third-party services via client-server architecture using Google ADK. Passionate about building scalable, production-ready AI systems that solve real business problems.</p>
+
+  <h2>TECHNICAL SKILLS</h2>
+  <div class="r-skill"><strong>AI / LLM:</strong> Gemini Models, LLMs, RAG Pipeline, Prompt Engineering, Agentic AI, AI Agents</div>
+  <div class="r-skill"><strong>Frameworks:</strong> LangChain, LlamaIndex, MCP (Model Context Protocol), Google ADK</div>
+  <div class="r-skill"><strong>Cloud:</strong> Azure, AWS, GCP, Docker, Kubernetes, Linux</div>
+  <div class="r-skill"><strong>Databases:</strong> PostgreSQL (PGAdmin), SQL, PgVector (Vector DB)</div>
+  <div class="r-skill"><strong>Languages:</strong> Python, Java</div>
+  <div class="r-skill"><strong>Tools & IDE:</strong> VS Code, Kiro IDE, KQL, Git</div>
+
+  <h2>WORK EXPERIENCE</h2>
+  <h3>Generative AI Engineer — Corent Technology</h3>
+  <div class="r-meta">June 2023 – Present (3 Years)</div>
+  <ul>
+    <li><strong>NL-to-SQL Engine:</strong> AI-Driven SQL Generation using Gemini models to convert natural language to PostgreSQL queries, with Cosine Similarity retrieval for efficient execution.</li>
+    <li><strong>Multi-Cloud AI Chatbot:</strong> Built a chatbot leveraging AI/ML for real-time cloud details across Azure, AWS, and GCP.</li>
+    <li><strong>Dynamic AI Workflow (MCP):</strong> Designed intelligent orchestration of complex multi-step tasks using MCP tools.</li>
+    <li><strong>Google ADK Integration:</strong> Client-server architecture for seamless external API connectivity within AI pipelines.</li>
+    <li><strong>Cloud Observability:</strong> Automated live cloud account detail retrieval using KQL queries.</li>
+    <li><strong>Cloud Knowledge Base:</strong> Streamlined metadata ingestion from AWS, Azure, and GCP APIs for resource costing.</li>
+    <li><strong>Web Scraping & Chatbot:</strong> Pipeline to scrape web content and provide accurate AI-generated answers.</li>
+    <li><strong>DevOps & Automation:</strong> Linux service creation, containerization with Docker and Kubernetes.</li>
+  </ul>
+
+  <h2>KEY PROJECTS</h2>
+  <div class="r-proj"><strong>AI-Powered Web Intelligence & RAG System</strong> — RAG system with PgVector for semantic search and AI-generated answers.</div>
+  <div class="r-proj"><strong>Dynamic Workflow Automation with MCP</strong> — Multi-step intelligent process orchestration with real-time tool use.</div>
+  <div class="r-proj"><strong>Third-Party MCP Integration via Google ADK</strong> — Client-server architecture connecting AI agents to external services.</div>
+  <div class="r-proj"><strong>NL-to-SQL Engine (Intent Classification)</strong> — PostgreSQL Query Generator with Gemini and Intent Classification.</div>
+  <div class="r-proj"><strong>Multi-Cloud Resource Intelligence Chatbot</strong> — Cloud resource details across Azure, AWS, GCP via user queries.</div>
+
+  <h2>INTERNSHIP</h2>
+  <h3>Software Development Intern — Integrass</h3>
+  <div class="r-meta">June 2022 – September 2022</div>
+  <ul>
+    <li>Hands-on understanding of SDLC and Agile development methodologies.</li>
+    <li>Functional Testing, Integration Testing, System Testing, Test Plans, Test Cases, and Test Scenarios.</li>
+  </ul>
+
+  <h2>EDUCATION</h2>
+  <ul>
+    <li>M.Sc Computer Science — Bharathidasan University, Trichy (2022) · 85.58%</li>
+    <li>B.Sc Computer Science — Shrimathi Indira Gandhi College, Trichy (2020) · 85.77%</li>
+    <li>HSC — Govt. Higher Secondary School, Cuddalore (2017) · 72%</li>
+    <li>SSLC — Aandavar Higher Secondary School, Cuddalore (2015) · 92.8%</li>
+  </ul>
+
+  <h2>LANGUAGES</h2>
+  <p>English | Tamil</p>
+</div>
+
+<!-- FAB (draggable + branded) -->
+<button class="bot-fab" id="botFab"><span class="ic-open">🤖</span><span class="ic-close">✕</span></button>
+
+<!-- Chat Panel -->
+<div class="bot-panel" id="botPanel">
+  <div class="bp-head">
+    <div class="bp-head-icon" style="font-weight:900;font-size:.7rem">VS</div>
+    <div><h3>Vasanthi's AI Assistant</h3><small>Skills · Experience · Cloud · Projects</small></div>
+    <button class="bp-close" id="bpClose">✕</button>
+  </div>
+  <div class="bp-chat" id="bpChat">
+    <div class="bp-msg"><div class="bp-bub">Hi! 👋 I'm Vasanthi's AI assistant. Ask me about her skills, experience, projects, or how to reach her.
+      <div class="bp-chips">
+        <span class="bp-chip">Why hire Vasanthi?</span>
+        <span class="bp-chip">Skills</span>
+        <span class="bp-chip">Cloud work</span>
+        <span class="bp-chip">Projects</span>
+        <span class="bp-chip">Experience</span>
+        <span class="bp-chip">Contact</span>
+      </div>
+    </div></div>
+  </div>
+  <div class="bp-input">
+    <input id="bpQ" type="text" placeholder="Ask about Vasanthi..." autocomplete="off">
+    <button id="bpSend">➤</button>
+  </div>
+</div>
+
+</body>
+</html>
