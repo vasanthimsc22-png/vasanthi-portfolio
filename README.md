@@ -1,7 +1,3 @@
-# Vasanthi S — Portfolio (Split Version)
-
-This is the same portfolio as `vasanthi_portfolio.html`, split into separate files for better maintainability and GitHub Pages deployment.
-
 ## 📁 File Structure
 
 | File | Purpose |
@@ -41,13 +37,6 @@ Just open `index.html` in any browser. That's it — no server needed.
    - `chatbot.js`
 3. Go to Settings → Pages → Deploy from branch → `main` / `root`
 4. Your site will be live at `https://yourusername.github.io/vasanthi-portfolio/`
-
-## ⚠️ Important Notes
-
-- All files must be in the **same folder** (they reference each other with relative paths)
-- No build step, no npm, no framework — pure HTML/CSS/JS
-- The portfolio works offline (no external API calls except the contact form via Formspree)
-- Print/Download CV uses the browser's print dialog and renders the hidden `#resume` section
 
 ## ✨ Features
 
